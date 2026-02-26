@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Internet of Behaviors",
+    "year": 2021,
+    "slug": "internet-of-behaviors",
+    "category": "Data",
+    "description": "Organizations would collect and use behavioral data from IoT devices, social media, and digital interactions to influence human behavior through feedback loops.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partially realized — behavioral analytics are widespread in marketing and UX, but the 'IoB' as a distinct trend didn't catch on as a named category. Privacy pushback limited some applications.",
+    "status": "emerging"
+  },
+  {
+    "name": "Total Experience",
+    "year": 2021,
+    "slug": "total-experience",
+    "category": "UX",
+    "description": "Linking customer experience, employee experience, user experience, and multiexperience into a unified strategy that drives better outcomes.",
+    "accuracyScore": 3,
+    "accuracyNote": "Aspirational — while companies recognized the importance of unified experiences, most still operate in silos. The concept influenced strategy but didn't transform operations.",
+    "status": "emerging"
+  },
+  {
+    "name": "Privacy-Enhancing Computation",
+    "year": 2021,
+    "slug": "privacy-computation",
+    "category": "Security",
+    "description": "Technologies like homomorphic encryption, secure multiparty computation, and federated learning would enable data processing while preserving privacy.",
+    "accuracyScore": 3,
+    "accuracyNote": "Technically progressing — federated learning found use in mobile keyboards and healthcare. Homomorphic encryption remains too slow for most practical use. An important but still-emerging field.",
+    "status": "emerging"
+  },
+  {
+    "name": "Distributed Cloud",
+    "year": 2021,
+    "slug": "distributed-cloud-2021",
+    "category": "Cloud",
+    "description": "Cloud services distributed to different locations while remaining centrally managed, enabling data sovereignty and low-latency applications.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — all major cloud providers offer distributed cloud options. Data sovereignty requirements (EU) drove adoption significantly.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Anywhere Operations",
+    "year": 2021,
+    "slug": "anywhere-operations",
+    "category": "Platform",
+    "description": "An operating model designed to support customers everywhere, enable employees everywhere, and manage the deployment of business services across distributed infrastructure.",
+    "accuracyScore": 3,
+    "accuracyNote": "COVID had already forced remote work by the time this prediction was published (finalized in late 2020). Describing what was already happening is observation, not prediction. Directionally right but not prescient.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Cybersecurity Mesh",
+    "year": 2021,
+    "slug": "cybersecurity-mesh",
+    "category": "Security",
+    "description": "A distributed architectural approach to scalable, flexible, and reliable cybersecurity control. Security would move from centralized perimeters to distributed identity-based controls.",
+    "accuracyScore": 3,
+    "accuracyNote": "'Distributed architectural approach to cybersecurity' is vague. Zero trust, which is what actually happened, was already well-known before 2021. The 'mesh' metaphor implies interoperable security tools, which remains aspirational for most organizations.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Intelligent Composable Business",
+    "year": 2021,
+    "slug": "composable-business",
+    "category": "Architecture",
+    "description": "Organizations would redesign around modular, composable capabilities that can be rearranged as business needs change, supported by real-time data and AI-driven decisions.",
+    "accuracyScore": 3,
+    "accuracyNote": "Aspirational — composable architecture influenced API-first and headless CMS trends, but most enterprises still struggle with monolithic systems. More vision than reality for most.",
+    "status": "emerging"
+  },
+  {
+    "name": "AI Engineering",
+    "year": 2021,
+    "slug": "ai-engineering",
+    "category": "AI/ML",
+    "description": "Organizations would need robust AI engineering strategies — including MLOps, DataOps, and model governance — to operationalize AI at scale.",
+    "accuracyScore": 3,
+    "accuracyNote": "MLOps and model governance are real, but the AI engineering that mattered post-2022 (prompt engineering, LLM evaluation, RAG pipelines) was fundamentally different from the 'MLOps, DataOps' described. The discipline changed completely.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Hyperautomation",
+    "year": 2021,
+    "slug": "hyperautomation-2021",
+    "category": "AI/ML",
+    "description": "Disciplined approach to rapidly identifying, vetting, and automating as many business and IT processes as possible using AI, RPA, and other technologies.",
+    "accuracyScore": 3,
+    "accuracyNote": "Described RPA + AI automating business processes via a disciplined, tool-chain approach. Enterprise RPA investments grew but ROI was often disappointing. The real automation leap came from LLM-based agents — a fundamentally different technology than the RPA pipelines Gartner described.",
+    "status": "transformed"
+  }
+]

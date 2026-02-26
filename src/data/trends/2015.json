@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Computing Everywhere",
+    "year": 2015,
+    "slug": "computing-everywhere",
+    "category": "Mobile",
+    "description": "As mobile devices proliferate, Gartner predicted increased emphasis on serving users in diverse contexts and environments rather than focusing on devices alone.",
+    "accuracyScore": 3,
+    "accuracyNote": "The prediction — 'serving users in diverse contexts rather than focusing on devices' — was so vague it says almost nothing specific. Any improvement in responsive design or UX counts as validation. Consulting-speak, not a falsifiable prediction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "The Internet of Things",
+    "year": 2015,
+    "slug": "iot-2015",
+    "category": "IoT",
+    "description": "IoT would be a transformative force, with organizations monetizing data from connected devices and creating new services and business models.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partially true — industrial IoT delivered value in manufacturing and logistics, but the transformative consumer IoT revolution was slower than expected.",
+    "status": "mainstream"
+  },
+  {
+    "name": "3D Printing",
+    "year": 2015,
+    "slug": "3d-printing-2015",
+    "category": "Hardware",
+    "description": "Continued predictions of rapid 3D printing adoption, with shipments expected to double again and use cases expanding across industries.",
+    "accuracyScore": 2,
+    "accuracyNote": "Still overhyped — growth continued in industrial applications but the consumer revolution didn't materialize. Gartner kept this on the list too long.",
+    "status": "faded"
+  },
+  {
+    "name": "Advanced, Pervasive and Invisible Analytics",
+    "year": 2015,
+    "slug": "pervasive-analytics",
+    "category": "Data",
+    "description": "Analytics would be embedded everywhere — in every app, every process, every employee's workflow. Big data would move from specialized to pervasive.",
+    "accuracyScore": 3,
+    "accuracyNote": "Analytics became more widespread in SaaS products, but 'invisible analytics embedded in every process' overstates reality. Most workers still use spreadsheets; BI improved but still requires deliberate effort.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Context-Rich Systems",
+    "year": 2015,
+    "slug": "context-rich-systems",
+    "category": "AI/ML",
+    "description": "Systems would use contextual information (location, activity, preferences, social connections) to proactively anticipate user needs and deliver personalized experiences.",
+    "accuracyScore": 4,
+    "accuracyNote": "Largely accurate — recommendation engines, personalization, and context-aware notifications became ubiquitous in apps like Spotify, Netflix, and Google Maps.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Smart Machines",
+    "year": 2015,
+    "slug": "smart-machines-2015",
+    "category": "AI/ML",
+    "description": "Deep learning, neural networks, and natural language processing would advance rapidly, creating autonomous agents and smart advisors.",
+    "accuracyScore": 3,
+    "accuracyNote": "Gartner predicted autonomous agents and smart advisors via deep learning and NLP. While deep learning did advance, the actual breakthroughs (transformers, LLMs) followed a completely different path than the neural net + reinforcement learning approach envisioned. The outcome loosely matches, but the mechanism and timeline were wrong.",
+    "status": "transformed"
+  },
+  {
+    "name": "Cloud/Client Computing",
+    "year": 2015,
+    "slug": "cloud-client-2015",
+    "category": "Cloud",
+    "description": "Cloud and mobile would converge, with synchronized apps and services spanning client devices and cloud backends becoming the dominant model.",
+    "accuracyScore": 3,
+    "accuracyNote": "'Synchronized apps spanning client devices and cloud backends' describes how the internet already worked in 2015, not a bold prediction. Directionally correct but not prescient.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Software-Defined Infrastructure",
+    "year": 2015,
+    "slug": "sdi-2015",
+    "category": "Infrastructure",
+    "description": "Programmable infrastructure would become the standard, with APIs replacing manual configuration across networking, storage, and compute.",
+    "accuracyScore": 3,
+    "accuracyNote": "Terraform, Kubernetes, and cloud APIs became industry standard. But 'APIs replacing manual configuration' was already underway — more observing a trend than predicting one.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Web-Scale IT",
+    "year": 2015,
+    "slug": "web-scale-2015",
+    "category": "Infrastructure",
+    "description": "More enterprises would adopt the operational models of hyperscale cloud providers, including self-service, automation, and agile development.",
+    "accuracyScore": 3,
+    "accuracyNote": "DevOps and cloud-native practices became mainstream, but this was a vague prediction that anything cloud-related validates. Many enterprises still haven't fully adopted web-scale practices.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Risk-Based Security and Self-Protection",
+    "year": 2015,
+    "slug": "risk-based-security",
+    "category": "Security",
+    "description": "Security would shift from perimeter defense to application self-protection and risk-based approaches, with security embedded into applications themselves.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — zero trust architecture, DevSecOps, and runtime application self-protection (RASP) emerged as predicted, though adoption was slower than hoped.",
+    "status": "mainstream"
+  }
+]

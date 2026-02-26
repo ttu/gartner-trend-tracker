@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Data Fabric",
+    "year": 2022,
+    "slug": "data-fabric",
+    "category": "Data",
+    "description": "An architecture that provides a consistent and unified data management framework across cloud, on-premises, and edge environments using AI to automate data integration.",
+    "accuracyScore": 3,
+    "accuracyNote": "Databricks, Snowflake, and dbt are data platforms, not 'data fabric' as Gartner defined it (AI-automated data integration across environments). Most organizations still struggle with basic data integration. The specific 'data fabric' concept hasn't materialized.",
+    "status": "niche"
+  },
+  {
+    "name": "Cybersecurity Mesh",
+    "year": 2022,
+    "slug": "cybersecurity-mesh-2022",
+    "category": "Security",
+    "description": "A flexible, modular approach to security that integrates widely distributed security services. Enables best-of-breed security tools to work together.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — SASE, XDR, and identity-mesh approaches became the enterprise security norm. Vendors consolidated into platforms while maintaining interoperability.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Privacy-Enhancing Computation",
+    "year": 2022,
+    "slug": "privacy-computation-2022",
+    "category": "Security",
+    "description": "Three technologies for protecting data while in use: trusted execution environments, privacy-aware ML (federated learning), and homomorphic encryption.",
+    "accuracyScore": 3,
+    "accuracyNote": "Progressing but still emerging — confidential computing (Azure, GCP) gained traction. Federated learning is used in specific domains. Full practical deployment remains limited.",
+    "status": "emerging"
+  },
+  {
+    "name": "Cloud-Native Platforms",
+    "year": 2022,
+    "slug": "cloud-native",
+    "category": "Cloud",
+    "description": "Cloud-native platforms using containers, serverless, and microservices would become the default for building and running elastic, resilient applications.",
+    "accuracyScore": 5,
+    "accuracyNote": "Spot on — Kubernetes, serverless (Lambda, Cloud Functions), and container-based development became the default enterprise approach. Cloud-native is now the standard.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Composable Applications",
+    "year": 2022,
+    "slug": "composable-apps",
+    "category": "Architecture",
+    "description": "Applications built from modular, business-centric components (packaged business capabilities) that can be easily composed, recomposed, and extended.",
+    "accuracyScore": 3,
+    "accuracyNote": "Directionally correct — API-first, headless architectures, and micro-frontends adopted this philosophy. But most enterprises still build monoliths or semi-modular systems.",
+    "status": "emerging"
+  },
+  {
+    "name": "Decision Intelligence",
+    "year": 2022,
+    "slug": "decision-intelligence",
+    "category": "AI/ML",
+    "description": "A practical approach that uses AI, analytics, and decision modeling to improve organizational decision-making at all levels.",
+    "accuracyScore": 3,
+    "accuracyNote": "'AI-powered decision support' using 'analytics and decision modeling' is consultant-speak for 'using data to make decisions' — something happening for decades. The specific term 'decision intelligence' didn't catch on.",
+    "status": "faded"
+  },
+  {
+    "name": "Hyperautomation",
+    "year": 2022,
+    "slug": "hyperautomation-2022",
+    "category": "AI/ML",
+    "description": "A disciplined, business-driven approach to rapidly identify, vet, and automate as many business processes as possible.",
+    "accuracyScore": 3,
+    "accuracyNote": "Still describing RPA + AI pipelines for process automation. RPA market growth slowed as the approach hit practical limits. The automation that actually worked at scale in 2024-2025 came from LLM agents — a completely different paradigm than the rule-based automation toolchains Gartner kept promoting.",
+    "status": "transformed"
+  },
+  {
+    "name": "AI Engineering",
+    "year": 2022,
+    "slug": "ai-engineering-2022",
+    "category": "AI/ML",
+    "description": "A discipline focused on making AI a part of the mainstream software engineering process, including MLOps, model governance, and responsible AI practices.",
+    "accuracyScore": 3,
+    "accuracyNote": "Predicted making AI mainstream via 'MLOps and model governance.' Post-ChatGPT, the discipline shifted entirely to prompt engineering, LLM evaluation, and RAG — none of which are traditional MLOps. The field evolved in a completely different direction than described.",
+    "status": "transformed"
+  },
+  {
+    "name": "Distributed Enterprise",
+    "year": 2022,
+    "slug": "distributed-enterprise",
+    "category": "Platform",
+    "description": "The shift to remote and hybrid work would reshape enterprise architecture, with organizations optimizing for distributed-first operations.",
+    "accuracyScore": 3,
+    "accuracyNote": "Hybrid work was already the norm when this prediction was published. Describing a continuation of post-COVID work patterns is observation, not prediction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Total Experience",
+    "year": 2022,
+    "slug": "total-experience-2022",
+    "category": "UX",
+    "description": "A strategy that unifies employee experience, customer experience, user experience, and multiexperience to drive greater confidence in the workforce and customers.",
+    "accuracyScore": 3,
+    "accuracyNote": "Aspirational — companies talked about unified experience strategies, but execution remains fragmented. Individual experience domains improved more than the unified vision.",
+    "status": "emerging"
+  },
+  {
+    "name": "Autonomic Systems",
+    "year": 2022,
+    "slug": "autonomic-systems",
+    "category": "AI/ML",
+    "description": "Self-managing physical or software systems that learn from their environments and dynamically modify their own algorithms in real time without software updates.",
+    "accuracyScore": 2,
+    "accuracyNote": "Still aspirational — while self-healing infrastructure and auto-scaling improved, truly autonomic systems that self-modify remain mostly in research.",
+    "status": "emerging"
+  },
+  {
+    "name": "Generative AI",
+    "year": 2022,
+    "slug": "generative-ai-2022",
+    "category": "AI/ML",
+    "description": "AI that can learn from existing content and generate new, realistic artifacts including text, images, video, and code that reflect the characteristics of the training data.",
+    "accuracyScore": 5,
+    "accuracyNote": "Perhaps the most perfectly timed prediction ever — DALL-E 2, Stable Diffusion, and ChatGPT all launched in 2022, making generative AI the defining technology of the decade.",
+    "status": "mainstream"
+  }
+]

@@ -1,0 +1,114 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ScoreDisplay from '../../../components/ScoreDisplay.astro';
+import StatusBadge from '../../../components/StatusBadge.astro';
+import CategoryPill from '../../../components/CategoryPill.astro';
+import { YEARS, getTrendsByYear, getTrend, getRelatedTrends, getScoreColor, getCategoryColor } from '../../../lib/trends';
+import { url } from '../../../lib/url';
+
+export function getStaticPaths() {
+  return YEARS.flatMap(year =>
+    getTrendsByYear(year).map(trend => ({
+      params: { year: String(year), slug: trend.slug },
+    }))
+  );
+}
+
+const { year, slug } = Astro.params;
+const trend = getTrend(Number(year), slug!);
+if (!trend) return Astro.redirect(url('/'));
+
+const related = getRelatedTrends(trend);
+const scoreColor = getScoreColor(trend.accuracyScore);
+const catColor = getCategoryColor(trend.category);
+const dashboardForYear = `${url('/')}#${trend.year}`;
+---
+
+<Layout title={`${trend.name} (${trend.year}) — Gartner Trend Tracker`}>
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-sm text-[var(--color-text-dim)] mb-8 animate-fade-in" aria-label="Breadcrumb">
+      <a href={dashboardForYear} class="hover:text-[var(--color-text)] transition-colors underline-offset-2 hover:underline">Dashboard</a>
+      <span aria-hidden="true">/</span>
+      <a href={dashboardForYear} class="font-mono hover:text-[var(--color-text)] transition-colors underline-offset-2 hover:underline">{trend.year}</a>
+      <span aria-hidden="true">/</span>
+      <a href={url(`/trend/${trend.year}/${trend.slug}`)} class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors underline-offset-2 hover:underline" aria-current="page">{trend.name}</a>
+    </nav>
+
+    <!-- Header -->
+    <div class="relative mb-10 animate-fade-in-up">
+      <!-- Accent glow -->
+      <div class="absolute -top-20 -left-20 size-60 rounded-full opacity-[0.06] blur-[80px]" style={`background-color: ${scoreColor};`}></div>
+
+      <div class="relative">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+          <span class="font-mono text-sm text-[var(--color-text-dim)] border border-[var(--color-border)] rounded px-2 py-0.5">{trend.year}</span>
+          <CategoryPill category={trend.category} />
+          <StatusBadge status={trend.status} />
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6">{trend.name}</h1>
+
+        <!-- What Gartner Predicted (first) -->
+        <div class="mb-10 animate-fade-in-up delay-1">
+          <h2 class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium mb-3">What Gartner Predicted</h2>
+          <div class="relative p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+            <div class="absolute top-4 left-4 text-4xl leading-none text-[var(--color-border-light)] font-serif">&ldquo;</div>
+            <p class="text-[var(--color-text)] leading-relaxed pl-6 text-lg">{trend.description}</p>
+          </div>
+        </div>
+
+        <!-- Score hero -->
+        <div class="flex items-center gap-6 p-5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] animate-fade-in-up delay-2">
+          <div class="flex-shrink-0">
+            <div
+              class="flex items-center justify-center size-20 rounded-xl font-mono font-bold text-3xl"
+              style={`color: ${scoreColor}; background: linear-gradient(135deg, ${scoreColor}15, ${scoreColor}08); border: 2px solid ${scoreColor}30;`}
+            >
+              {trend.accuracyScore !== null ? trend.accuracyScore : '?'}
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider mb-1">Prediction Accuracy</div>
+            <ScoreDisplay score={trend.accuracyScore} size="lg" />
+            <p class="text-sm text-[var(--color-text-muted)] mt-2 leading-relaxed">{trend.accuracyNote}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related trends -->
+    {related.length > 0 && (
+      <div class="animate-fade-in-up delay-3">
+        <h2 class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium mb-3">Related Predictions</h2>
+        <div class="grid gap-2">
+          {related.slice(0, 6).map(r => {
+            const rColor = getScoreColor(r.accuracyScore);
+            return (
+              <a
+                href={url(`/trend/${r.year}/${r.slug}`)}
+                class="flex items-center gap-4 p-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] hover:bg-[var(--color-bg-card-hover)] hover:border-[var(--color-border-light)] transition-all group"
+              >
+                <span class="font-mono text-xs text-[var(--color-text-dim)] w-10">{r.year}</span>
+                <span class="flex-1 text-sm font-medium group-hover:text-[var(--color-accent)] transition-colors">{r.name}</span>
+                <div
+                  class="size-7 rounded flex items-center justify-center font-mono text-xs font-bold"
+                  style={`color: ${rColor}; background-color: ${rColor}15;`}
+                >
+                  {r.accuracyScore ?? '?'}
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
+    <!-- Back link -->
+    <div class="mt-10 pt-6 border-t border-[var(--color-border)]">
+      <a href={dashboardForYear} class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors underline-offset-2 hover:underline">
+        &larr; Back to Dashboard
+      </a>
+    </div>
+  </div>
+</Layout>

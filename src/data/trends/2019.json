@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Autonomous Things",
+    "year": 2019,
+    "slug": "autonomous-things",
+    "category": "AI/ML",
+    "description": "Robots, drones, and autonomous vehicles would use AI to perform tasks previously done by humans, operating in both controlled and open environments.",
+    "accuracyScore": 2,
+    "accuracyNote": "Predicted robots, drones, and autonomous vehicles operating in open environments. Warehouse robots made incremental progress; delivery drones remain niche; autonomous vehicles are still not mainstream in 2026. The timeline was far too aggressive and the physical autonomy vision largely didn't materialize.",
+    "status": "emerging"
+  },
+  {
+    "name": "Augmented Analytics",
+    "year": 2019,
+    "slug": "augmented-analytics",
+    "category": "Data",
+    "description": "AI and ML would automate data preparation, insight generation, and sharing of insights, making analytics accessible to business users rather than just data scientists.",
+    "accuracyScore": 3,
+    "accuracyNote": "The prediction described traditional ML automating ETL and insight discovery. What actually made analytics accessible was LLM-based natural language querying (Copilot-style analytics). The outcome matches but via different technology than described.",
+    "status": "mainstream"
+  },
+  {
+    "name": "AI-Driven Development",
+    "year": 2019,
+    "slug": "ai-driven-development",
+    "category": "AI/ML",
+    "description": "AI would be integrated into development tools and processes, automating testing, code generation, and application design. Professional developers would use AI assistants.",
+    "accuracyScore": 3,
+    "accuracyNote": "Predicted AI automating testing and design via traditional ML. What happened (Copilot, Cursor, Claude Code) is fundamentally different — LLM-powered code generation rather than ML-based SDLC automation. Right area, completely wrong mechanism.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Digital Twins",
+    "year": 2019,
+    "slug": "digital-twins-2019",
+    "category": "IoT",
+    "description": "Digital twins would expand beyond IoT into modeling organizations, processes, and entire ecosystems, becoming key decision-support tools.",
+    "accuracyScore": 3,
+    "accuracyNote": "Physical asset twins grew well. Organizational and process twins remain aspirational. The technology works but adoption is slower than predicted across most industries.",
+    "status": "niche"
+  },
+  {
+    "name": "Empowered Edge",
+    "year": 2019,
+    "slug": "empowered-edge",
+    "category": "Infrastructure",
+    "description": "Edge computing would bring computation and data storage closer to the sources of data, enabling faster processing and reduced bandwidth requirements.",
+    "accuracyScore": 3,
+    "accuracyNote": "Edge computing found niches (CDN workers, some IoT) but the prediction implied it would be much more transformative. Edge devices doing significant local computation remains limited. A useful niche, not the revolution described.",
+    "status": "niche"
+  },
+  {
+    "name": "Immersive Experience",
+    "year": 2019,
+    "slug": "immersive-2019",
+    "category": "UX",
+    "description": "Conversational platforms, AR, and VR would change how users perceive and interact with the digital world, creating multimodal, multi-sensory experiences.",
+    "accuracyScore": 2,
+    "accuracyNote": "The prediction emphasized AR, VR, and multi-sensory experiences. AR/VR adoption remained limited and Meta's pivot underperformed. Conversational AI succeeded, but that's not what 'immersive experience' meant — it was about spatial computing and sensory interfaces. Giving credit for ChatGPT here would be a stretch.",
+    "status": "faded"
+  },
+  {
+    "name": "Blockchain",
+    "year": 2019,
+    "slug": "blockchain-2019",
+    "category": "Blockchain",
+    "description": "Blockchain would mature and become more practical, with improvements in scalability, interoperability, and smart contracts enabling real enterprise adoption.",
+    "accuracyScore": 2,
+    "accuracyNote": "Still overhyped — despite technological improvements, enterprise blockchain adoption remained limited. Most pilot projects didn't scale to production.",
+    "status": "faded"
+  },
+  {
+    "name": "Smart Spaces",
+    "year": 2019,
+    "slug": "smart-spaces",
+    "category": "IoT",
+    "description": "Physical environments (offices, cities, factories) would become increasingly connected and intelligent, responding to occupants and optimizing operations.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partial — smart buildings and factories made progress, but COVID disrupted smart office investment. Smart city initiatives remain fragmented.",
+    "status": "niche"
+  },
+  {
+    "name": "Digital Ethics and Privacy",
+    "year": 2019,
+    "slug": "digital-ethics",
+    "category": "Governance",
+    "description": "Privacy, trust, and ethics would become critical concerns. Organizations would need to address growing public and government scrutiny around data use and AI bias.",
+    "accuracyScore": 5,
+    "accuracyNote": "Extremely accurate — GDPR enforcement, AI ethics debates, AI regulation (EU AI Act), and privacy legislation (CCPA) all materialized. One of Gartner's most important calls.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Quantum Computing",
+    "year": 2019,
+    "slug": "quantum-computing",
+    "category": "Infrastructure",
+    "description": "Quantum computing would progress from experimental to practical applications within 5-10 years, with organizations needing to understand its potential impact.",
+    "accuracyScore": 2,
+    "accuracyNote": "Premature — quantum computing in 2026 remains experimental with limited practical applications. The 'quantum advantage' for business problems is still years away.",
+    "status": "emerging"
+  }
+]

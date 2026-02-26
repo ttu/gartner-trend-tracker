@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Mobile Device Diversity and Management",
+    "year": 2014,
+    "slug": "mobile-device-diversity",
+    "category": "Mobile",
+    "description": "Gartner predicted that by 2018, the growing variety of devices, computing styles, user contexts, and interaction paradigms would make 'everything everywhere' strategies unachievable. Organizations would need to manage a diverse portfolio of mobile devices.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — BYOD and mobile device management became critical enterprise challenges. The diversity of devices exploded as predicted.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Mobile Apps and Applications",
+    "year": 2014,
+    "slug": "mobile-apps",
+    "category": "Mobile",
+    "description": "Gartner forecast that JavaScript would become dominant for mobile apps and that by 2017, most app development projects would blend mobile with web technologies.",
+    "accuracyScore": 3,
+    "accuracyNote": "React Native and PWAs validated the hybrid approach, but native Swift/Kotlin development remained dominant for serious mobile apps. JavaScript-based mobile found a niche, not the dominance predicted.",
+    "status": "mainstream"
+  },
+  {
+    "name": "The Internet of Everything",
+    "year": 2014,
+    "slug": "internet-of-everything",
+    "category": "IoT",
+    "description": "Gartner predicted that the Internet of Things would expand dramatically, with billions of connected devices creating new revenue streams and services for enterprises.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partially accurate — IoT growth was significant but slower and more fragmented than predicted. Consumer IoT remains niche; industrial IoT found stronger adoption.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Hybrid Cloud and IT as Service Broker",
+    "year": 2014,
+    "slug": "hybrid-cloud",
+    "category": "Cloud",
+    "description": "Organizations would combine personal clouds, external cloud services, and traditional IT into hybrid cloud environments, with IT departments becoming service brokers.",
+    "accuracyScore": 3,
+    "accuracyNote": "Hybrid cloud became the dominant enterprise strategy, but IT departments became infrastructure-as-code practitioners, not the 'service brokers' Gartner described. Half the prediction landed.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Cloud/Client Architecture",
+    "year": 2014,
+    "slug": "cloud-client-architecture",
+    "category": "Cloud",
+    "description": "The model of rich server-side computing combined with lightweight client apps would grow, blending cloud and client computing into a coordinated model.",
+    "accuracyScore": 3,
+    "accuracyNote": "SaaS and cloud-first architectures became the default, but the prediction was vague enough that almost anything validates it. Modern web apps often have rich client-side logic (React SPAs) — the opposite of 'lightweight client apps.'",
+    "status": "mainstream"
+  },
+  {
+    "name": "The Era of Personal Cloud",
+    "year": 2014,
+    "slug": "personal-cloud",
+    "category": "Cloud",
+    "description": "Personal cloud would replace the personal computer as the center of users' digital lives, with content and services available across devices.",
+    "accuracyScore": 4,
+    "accuracyNote": "Largely accurate — iCloud, Google Drive, and similar services did become central to users' digital lives, though PCs didn't fully disappear.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Software-Defined Anything",
+    "year": 2014,
+    "slug": "software-defined-anything",
+    "category": "Infrastructure",
+    "description": "Software-defined networking (SDN), storage, data centers, and security would grow as organizations sought to automate and abstract infrastructure management.",
+    "accuracyScore": 3,
+    "accuracyNote": "SDN, IaC (Terraform, Kubernetes) became standard practice. But 'software-defined anything' is so broad it's nearly unfalsifiable — any automation counts as validation.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Web-Scale IT",
+    "year": 2014,
+    "slug": "web-scale-it",
+    "category": "Infrastructure",
+    "description": "Enterprises would adopt the practices of large cloud service providers like Amazon, Google, and Facebook — including DevOps, automation, and horizontally scalable architectures.",
+    "accuracyScore": 3,
+    "accuracyNote": "DevOps, containers, and CI/CD became enterprise standard. But the prediction lacked specific falsifiable claims — any cloud adoption validates it, and many enterprises still run plenty of non-web-scale infrastructure.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Smart Machines",
+    "year": 2014,
+    "slug": "smart-machines",
+    "category": "AI/ML",
+    "description": "Gartner predicted a new era of smart machines — autonomous vehicles, advanced robots, virtual personal assistants, and intelligent advisors would emerge.",
+    "accuracyScore": 3,
+    "accuracyNote": "The prediction envisioned autonomous vehicles, advanced robots, and intelligent advisors. None of these arrived as described. Virtual assistants (Siri, Alexa) were underwhelming. The 'smart machine' era eventually arrived via LLMs in 2022-2025 — a completely different technology path than Gartner envisioned.",
+    "status": "transformed"
+  },
+  {
+    "name": "3D Printing",
+    "year": 2014,
+    "slug": "3d-printing",
+    "category": "Hardware",
+    "description": "Gartner forecast that 3D printer shipments would grow 75% in 2014 and double in 2015, with enterprise and consumer 3D printing transforming manufacturing.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overhyped — while industrial 3D printing found niches in aerospace and medical, consumer 3D printing never took off as predicted. Growth was much slower than forecast.",
+    "status": "niche"
+  }
+]

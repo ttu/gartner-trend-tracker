@@ -1,0 +1,102 @@
+[
+  {
+    "name": "AI Foundation",
+    "year": 2018,
+    "slug": "ai-foundation",
+    "category": "AI/ML",
+    "description": "Organizations should focus on creating an AI foundation strategy encompassing data, analytics, and AI capabilities to create intelligent business applications.",
+    "accuracyScore": 3,
+    "accuracyNote": "'Build an AI foundation strategy' was advice, not prediction. The AI that mattered (LLMs) required a completely different foundation than the 'data, analytics, and ML pipelines' described. Companies with traditional ML infrastructure had to start over with prompt engineering and LLM APIs.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Intelligent Apps and Analytics",
+    "year": 2018,
+    "slug": "intelligent-apps-2018",
+    "category": "AI/ML",
+    "description": "Over the next few years, virtually every app and service would incorporate some level of AI. Augmented analytics would automate data preparation and insight discovery.",
+    "accuracyScore": 3,
+    "accuracyNote": "AI did get embedded in apps, but via LLM APIs (Copilot branding) rather than the traditional ML-based augmented analytics described. The mechanism was completely different, and it took much longer than 'the next few years' — work is still ongoing in 2026.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Intelligent Things",
+    "year": 2018,
+    "slug": "intelligent-things-2018",
+    "category": "IoT",
+    "description": "Intelligent things using AI would collaborate with each other, forming 'swarm intelligence' and operating more independently from humans.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overly ambitious — swarm intelligence and autonomous thing-to-thing collaboration remains largely in research. Individual smart devices improved, but the collaborative vision didn't materialize.",
+    "status": "emerging"
+  },
+  {
+    "name": "Digital Twins",
+    "year": 2018,
+    "slug": "digital-twins-2018",
+    "category": "IoT",
+    "description": "Digital twins of organizations would emerge alongside those of physical assets, enabling holistic simulation and optimization of business operations.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partially accurate — physical asset digital twins grew in manufacturing and cities. Organizational digital twins remain aspirational for most enterprises.",
+    "status": "niche"
+  },
+  {
+    "name": "Cloud to the Edge",
+    "year": 2018,
+    "slug": "cloud-to-edge",
+    "category": "Infrastructure",
+    "description": "Edge computing would complement cloud computing, with processing happening closer to data sources for latency-sensitive applications.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — CDN edge computing (Cloudflare Workers, AWS Lambda@Edge), 5G edge, and edge AI became real. Not as revolutionary as predicted, but a solid architectural pattern.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Conversational Platforms",
+    "year": 2018,
+    "slug": "conversational-platforms-2018",
+    "category": "AI/ML",
+    "description": "Chatbots and virtual assistants would become primary interfaces, shifting human-computer interaction from technology-literate people to machines that understand people.",
+    "accuracyScore": 3,
+    "accuracyNote": "Gartner described chatbots and virtual assistants becoming primary interfaces through better NLP. The chatbot approach they envisioned (intent matching, dialog trees) mostly failed. LLMs created an entirely different kind of conversational AI that succeeded for reasons unrelated to the 2018 prediction. Same label, different technology.",
+    "status": "transformed"
+  },
+  {
+    "name": "Immersive Experience",
+    "year": 2018,
+    "slug": "immersive-experience",
+    "category": "UX",
+    "description": "AR, VR, and mixed reality would blend the physical and digital worlds, creating immersive experiences that transform how people interact with information.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overhyped again — Meta's VR push underperformed, and AR remained limited to phone-based experiences. Apple Vision Pro showed potential but adoption is minimal.",
+    "status": "niche"
+  },
+  {
+    "name": "Blockchain",
+    "year": 2018,
+    "slug": "blockchain-2018",
+    "category": "Blockchain",
+    "description": "Blockchain would create a trusted, distributed digital ledger enabling new business models and transforming how industries handle transactions and contracts.",
+    "accuracyScore": 2,
+    "accuracyNote": "Still overhyped — DeFi grew but remained niche and volatile. Enterprise blockchain projects mostly failed to deliver value. Smart contracts found limited practical use outside crypto.",
+    "status": "faded"
+  },
+  {
+    "name": "Event-Driven Model",
+    "year": 2018,
+    "slug": "event-driven",
+    "category": "Architecture",
+    "description": "Business events would be detected and acted upon in real time, with event-driven architecture becoming central to digital business strategy.",
+    "accuracyScore": 3,
+    "accuracyNote": "Event-driven architecture with Kafka was already well-established by 2018 (LinkedIn created Kafka in 2011). Observing an existing trend, not predicting one. 'Real-time event processing' overstates what most enterprises actually do.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Continuous Adaptive Risk and Trust",
+    "year": 2018,
+    "slug": "carta",
+    "category": "Security",
+    "description": "Security would move to continuous, adaptive risk assessment and trust evaluation rather than point-in-time security checks.",
+    "accuracyScore": 3,
+    "accuracyNote": "Zero trust validates the direction, but the specific CARTA framework Gartner promoted didn't become the industry standard — zero trust (a different framing from NIST) did. Close but not the framework predicted.",
+    "status": "mainstream"
+  }
+]

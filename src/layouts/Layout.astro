@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import { url } from '../lib/url';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Explore Gartner\'s annual tech trend predictions and see how well they aged.' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <style>
+      body {
+        font-family: 'Outfit', system-ui, sans-serif;
+      }
+      code, .mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Scanline effect -->
+    <div class="pointer-events-none fixed inset-0 z-50 overflow-hidden opacity-[0.015]">
+      <div class="absolute inset-x-0 h-[2px] bg-[var(--color-accent)]" style="animation: scanline 8s linear infinite;"></div>
+    </div>
+
+    <nav class="fixed top-0 inset-x-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-bg)]/80 backdrop-blur-xl">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-14 items-center justify-between">
+        <a href={url('/')} class="flex items-center gap-3 group">
+          <div class="size-7 rounded-md bg-[var(--color-accent)] flex items-center justify-center text-[var(--color-bg)] font-bold text-xs tracking-tight">GT</div>
+          <span class="font-semibold text-sm tracking-wide">GARTNER TREND TRACKER</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm">
+          <a href={url('/')} class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Dashboard</a>
+          <a href={url('/overview')} class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Overview</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-14">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] mt-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-text-dim)]">
+        <p>Gartner Trend Tracker &middot; Editorial accuracy assessments based on industry analysis</p>
+        <p>Data sourced from Gartner's annual Top Strategic Technology Trends reports</p>
+      </div>
+    </footer>
+  </body>
+</html>

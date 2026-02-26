@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Agentic AI",
+    "year": 2026,
+    "slug": "agentic-ai-2026",
+    "category": "AI/ML",
+    "description": "Autonomous AI systems that can independently plan, decide, and act to achieve goals. Agents would handle complex multi-step workflows across enterprise functions.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — agentic AI is the hottest trend in tech. Major investment from all players, but practical autonomous agents are still being figured out.",
+    "status": "emerging"
+  },
+  {
+    "name": "AI Governance Platforms",
+    "year": 2026,
+    "slug": "ai-governance-2026",
+    "category": "Governance",
+    "description": "Comprehensive platforms for managing AI risk, ensuring compliance with regulations (EU AI Act), monitoring model behavior, and maintaining audit trails.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — EU AI Act enforcement drives demand. AI governance is becoming a must-have, not a nice-to-have.",
+    "status": "emerging"
+  },
+  {
+    "name": "Disinformation Security",
+    "year": 2026,
+    "slug": "disinformation-security-2026",
+    "category": "Security",
+    "description": "Advanced tools and frameworks to combat AI-generated disinformation at scale, including deepfake detection, content authentication, and provenance tracking.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — deepfakes and synthetic media are a growing threat. Detection and provenance tools are evolving rapidly.",
+    "status": "emerging"
+  },
+  {
+    "name": "Postquantum Cryptography",
+    "year": 2026,
+    "slug": "post-quantum-2026",
+    "category": "Security",
+    "description": "Migration to quantum-resistant encryption algorithms as quantum computing advances threaten current cryptographic standards.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — NIST standards published, migration starting slowly. 'Harvest now, decrypt later' attacks drive urgency.",
+    "status": "emerging"
+  },
+  {
+    "name": "Ambient Invisible Intelligence",
+    "year": 2026,
+    "slug": "ambient-intelligence-2026",
+    "category": "IoT",
+    "description": "Pervasive, low-cost sensing and intelligence embedded in environments through smart tags, sensors, and edge AI processing.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — concept is compelling but practical deployment at scale hasn't happened yet.",
+    "status": "emerging"
+  },
+  {
+    "name": "Energy-Efficient Computing",
+    "year": 2026,
+    "slug": "energy-efficient-2026",
+    "category": "Sustainability",
+    "description": "Technologies and architectures to dramatically reduce the energy consumption of AI training and inference, including new chip designs and optimized algorithms.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — AI's energy demands make this critical. Focus on inference efficiency, model compression, and green data centers.",
+    "status": "emerging"
+  },
+  {
+    "name": "Hybrid Computing",
+    "year": 2026,
+    "slug": "hybrid-computing-2026",
+    "category": "Infrastructure",
+    "description": "Unified computing environments spanning classical, quantum, edge, and specialized AI hardware, orchestrated as a single compute fabric.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — cloud/edge hybrid is real, but quantum integration remains experimental.",
+    "status": "emerging"
+  },
+  {
+    "name": "Spatial Computing",
+    "year": 2026,
+    "slug": "spatial-computing-2026",
+    "category": "UX",
+    "description": "Computing experiences that blend digital content with the physical world through AR, VR, and mixed reality, enabled by advancing hardware and AI.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — Apple Vision Pro and Meta Quest exist but mainstream adoption unclear. Needs a compelling use case beyond gaming.",
+    "status": "emerging"
+  },
+  {
+    "name": "Polyfunctional Robots",
+    "year": 2026,
+    "slug": "polyfunctional-robots-2026",
+    "category": "AI/ML",
+    "description": "Versatile, AI-powered robots that can learn new tasks, adapt to different environments, and work alongside humans in various settings.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — humanoid robotics is attracting massive investment but practical deployment is limited to demos and controlled environments.",
+    "status": "emerging"
+  },
+  {
+    "name": "Neurological Enhancement",
+    "year": 2026,
+    "slug": "neurological-enhancement-2026",
+    "category": "Hardware",
+    "description": "Brain-computer interfaces and neurotechnology that can read, interpret, and potentially augment neural activity for medical and cognitive applications.",
+    "accuracyScore": null,
+    "accuracyNote": "Too early to score — Neuralink making progress on medical applications, but consumer cognitive enhancement is science fiction for now.",
+    "status": "emerging"
+  }
+]

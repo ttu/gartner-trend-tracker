@@ -1,0 +1,37 @@
+---
+import { getScoreColor } from '../lib/trends';
+
+interface Props {
+  score: number | null;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { score, size = 'md' } = Astro.props;
+const color = getScoreColor(score);
+const sizeClasses = {
+  sm: 'text-xs gap-0.5',
+  md: 'text-sm gap-1',
+  lg: 'text-base gap-1.5',
+};
+const dotSize = {
+  sm: 'size-1.5',
+  md: 'size-2',
+  lg: 'size-2.5',
+};
+---
+
+<div class={`flex items-center ${sizeClasses[size]}`}>
+  {score !== null ? (
+    <>
+      {[1, 2, 3, 4, 5].map(i => (
+        <div
+          class={`${dotSize[size]} rounded-full transition-all`}
+          style={`background-color: ${i <= score ? color : 'var(--color-border)'}; ${i <= score ? `box-shadow: 0 0 6px ${color}44;` : ''}`}
+        />
+      ))}
+      <span class="ml-1 font-mono font-medium" style={`color: ${color};`}>{score}/5</span>
+    </>
+  ) : (
+    <span class="font-mono text-[var(--color-text-dim)]">TBD</span>
+  )}
+</div>

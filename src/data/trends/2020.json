@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Hyperautomation",
+    "year": 2020,
+    "slug": "hyperautomation",
+    "category": "AI/ML",
+    "description": "The combination of RPA, ML, and AI to automate increasingly complex business processes end-to-end, not just individual tasks.",
+    "accuracyScore": 3,
+    "accuracyNote": "Gartner described RPA + traditional ML automating business processes. RPA grew but hit limits quickly. The real automation breakthrough came via LLM-based agents in 2024-2025 — a completely different technology stack than the RPA + ML pipeline Gartner envisioned. The 'hyperautomation' that's actually working looks nothing like the 2020 description.",
+    "status": "transformed"
+  },
+  {
+    "name": "Multiexperience",
+    "year": 2020,
+    "slug": "multiexperience",
+    "category": "UX",
+    "description": "Users would interact through multisensory and multimodal experiences spanning wearables, AR/VR, conversational interfaces, and traditional screens.",
+    "accuracyScore": 2,
+    "accuracyNote": "Predicted multisensory experiences spanning wearables, AR/VR, and conversational interfaces. Wearable and AR/VR interaction remained niche. Conversational AI succeeded, but via LLMs — an entirely different technology than the NLP chatbots Gartner described. The term 'multiexperience' itself never caught on.",
+    "status": "niche"
+  },
+  {
+    "name": "Democratization of Technology",
+    "year": 2020,
+    "slug": "democratization",
+    "category": "Platform",
+    "description": "No-code/low-code platforms, AI tools, and citizen development would provide access to technical or business expertise without extensive training.",
+    "accuracyScore": 3,
+    "accuracyNote": "No-code/low-code platforms grew but remain niche for serious applications. The real democratization happened via LLMs (ChatGPT making code/analysis accessible), which wasn't what Gartner described. Credit for the theme, not the mechanism.",
+    "status": "transformed"
+  },
+  {
+    "name": "Human Augmentation",
+    "year": 2020,
+    "slug": "human-augmentation",
+    "category": "AI/ML",
+    "description": "Technology would augment human cognitive and physical capabilities through wearables, AI assistants, and even implants.",
+    "accuracyScore": 2,
+    "accuracyNote": "Predicted wearables, AI assistants, and physical implants augmenting humans. Physical augmentation (exoskeletons, Neuralink) remains experimental. Cognitive augmentation happened via LLM assistants, but that's a completely different mechanism than the 'embedded AI in wearables and implants' vision. The prediction described hardware-centric augmentation; reality was software-centric.",
+    "status": "transformed"
+  },
+  {
+    "name": "Transparency and Traceability",
+    "year": 2020,
+    "slug": "transparency",
+    "category": "Governance",
+    "description": "Growing demands for ethical AI, data privacy, and regulatory compliance would require organizations to be transparent about how they use data and AI.",
+    "accuracyScore": 3,
+    "accuracyNote": "EU AI Act and GDPR enforcement are real, but 'growing demands for ethical AI and data privacy would require transparency' was a fairly obvious prediction many people were making by 2020. Directionally correct but not precise about HOW regulation would work.",
+    "status": "mainstream"
+  },
+  {
+    "name": "The Empowered Edge",
+    "year": 2020,
+    "slug": "empowered-edge-2020",
+    "category": "Infrastructure",
+    "description": "Edge computing would become increasingly sophisticated, with more powerful edge devices and edge AI enabling real-time processing at the point of need.",
+    "accuracyScore": 3,
+    "accuracyNote": "Edge AI and 5G edge exist but haven't been transformative for most organizations. The prediction oversold edge computing's impact — it remains a useful niche, not the revolution described.",
+    "status": "niche"
+  },
+  {
+    "name": "Distributed Cloud",
+    "year": 2020,
+    "slug": "distributed-cloud",
+    "category": "Cloud",
+    "description": "Public cloud services would be distributed to different physical locations while governance, operations, and evolution remain the responsibility of the public cloud provider.",
+    "accuracyScore": 3,
+    "accuracyNote": "AWS Outposts and Azure Arc exist but haven't been widely adopted. Most enterprises use standard multi-region cloud, not 'distributed cloud' with services at arbitrary physical locations. Adoption is more limited than the prediction implied.",
+    "status": "niche"
+  },
+  {
+    "name": "Autonomous Things",
+    "year": 2020,
+    "slug": "autonomous-things-2020",
+    "category": "AI/ML",
+    "description": "Drones, robots, and autonomous vehicles would move from controlled to more open environments, collaborating with each other and humans.",
+    "accuracyScore": 2,
+    "accuracyNote": "Still overly optimistic — warehouse robots succeeded but open-environment autonomy remains limited. Autonomous vehicles still aren't mainstream by 2026.",
+    "status": "emerging"
+  },
+  {
+    "name": "Practical Blockchain",
+    "year": 2020,
+    "slug": "practical-blockchain",
+    "category": "Blockchain",
+    "description": "Blockchain would mature past the hype to deliver practical value in supply chain verification, identity management, and financial services.",
+    "accuracyScore": 2,
+    "accuracyNote": "Limited — some supply chain use cases emerged, but 'practical blockchain' remained elusive for most enterprises. The crypto crash of 2022 dampened enterprise enthusiasm.",
+    "status": "faded"
+  },
+  {
+    "name": "AI Security",
+    "year": 2020,
+    "slug": "ai-security",
+    "category": "Security",
+    "description": "AI would be used to enhance security operations, while also creating new attack vectors that organizations would need to defend against.",
+    "accuracyScore": 3,
+    "accuracyNote": "'AI would enhance security and create new attack vectors' is so obvious for any dual-use technology that it barely counts as a bold prediction. Both sides materialized, but the specifics (deepfakes, prompt injection) weren't called out.",
+    "status": "mainstream"
+  }
+]

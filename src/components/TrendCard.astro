@@ -1,0 +1,58 @@
+---
+import type { Trend } from '../lib/trends';
+import { getCategoryColor, getScoreColor } from '../lib/trends';
+import { url } from '../lib/url';
+import ScoreDisplay from './ScoreDisplay.astro';
+import StatusBadge from './StatusBadge.astro';
+import CategoryPill from './CategoryPill.astro';
+
+interface Props {
+  trend: Trend;
+  index?: number;
+}
+
+const { trend, index = 0 } = Astro.props;
+const scoreColor = getScoreColor(trend.accuracyScore);
+---
+
+<a
+  href={url(`/trend/${trend.year}/${trend.slug}`)}
+  class={`group block relative rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition-all duration-300 hover:border-[var(--color-border-light)] hover:bg-[var(--color-bg-card-hover)] hover:-translate-y-0.5 animate-fade-in-up delay-${index + 1}`}
+>
+  <!-- Score accent bar -->
+  <div
+    class="absolute top-0 left-5 right-5 h-[2px] rounded-b-full opacity-60 group-hover:opacity-100 transition-opacity"
+    style={`background: linear-gradient(90deg, transparent, ${scoreColor}, transparent);`}
+  />
+
+  <div class="flex items-start justify-between gap-3 mb-3">
+    <div class="flex-1 min-w-0">
+      <h3 class="font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors leading-tight mb-2">
+        {trend.name}
+      </h3>
+      <div class="flex flex-wrap items-center gap-2">
+        <CategoryPill category={trend.category} />
+        <StatusBadge status={trend.status} />
+      </div>
+    </div>
+    <div class="flex-shrink-0">
+      <div
+        class="flex items-center justify-center size-11 rounded-lg font-mono font-bold text-lg"
+        style={`color: ${scoreColor}; background-color: ${scoreColor}15; border: 1px solid ${scoreColor}25;`}
+      >
+        {trend.accuracyScore !== null ? trend.accuracyScore : '?'}
+      </div>
+    </div>
+  </div>
+
+  <p class="text-sm text-[var(--color-text-muted)] leading-relaxed line-clamp-2 mb-3">
+    {trend.description}
+  </p>
+
+  <div class="flex items-center justify-between">
+    <ScoreDisplay score={trend.accuracyScore} size="sm" />
+    <span class="text-xs text-[var(--color-text-dim)] group-hover:text-[var(--color-accent)] transition-colors">
+      View analysis &rarr;
+    </span>
+  </div>
+</a>

@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrendCard from '../components/TrendCard.astro';
+import YearStats from '../components/YearStats.astro';
+import { YEARS, getTrendsByYear, getAverageScore, getScoreColor } from '../lib/trends';
+
+const defaultYear = 2024;
+---
+
+<Layout title="Gartner Trend Tracker — How Well Did Tech Predictions Age?">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-[var(--color-border)]">
+    <!-- Background grid -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(var(--color-accent) 1px, transparent 1px), linear-gradient(90deg, var(--color-accent) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Gradient orb -->
+    <div class="absolute -top-40 -right-40 size-96 rounded-full bg-[var(--color-accent)] opacity-[0.04] blur-[100px]"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-1 text-xs text-[var(--color-text-muted)] mb-6 animate-fade-in">
+          <span class="size-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
+          Tracking {YEARS.length} years of predictions &middot; {YEARS[0]}&ndash;{YEARS[YEARS.length - 1]}
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-4 animate-fade-in-up">
+          How Well Did<br />
+          <span class="bg-gradient-to-r from-[var(--color-accent)] via-[#7c6aff] to-[var(--color-cat-ux)] bg-clip-text text-transparent">Gartner's Predictions</span><br />
+          Actually Age?
+        </h1>
+        <p class="text-lg text-[var(--color-text-muted)] leading-relaxed max-w-2xl animate-fade-in-up delay-2">
+          Every year, Gartner publishes its Top Strategic Technology Trends. We tracked them all and scored how well each prediction came true.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Year Selector + Content -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Year Timeline -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium">Select Year</span>
+        <div class="flex-1 h-px bg-[var(--color-border)]"></div>
+      </div>
+      <div class="flex gap-1 overflow-x-auto pb-2 scrollbar-hide" id="year-nav">
+        {YEARS.map(year => {
+          const avg = getAverageScore(getTrendsByYear(year));
+          const color = getScoreColor(avg !== null ? Math.round(avg) : null);
+          return (
+            <button
+              data-year={year}
+              class={`year-btn relative flex flex-col items-center gap-1 px-3 py-2 rounded-lg border transition-all duration-200 text-sm font-medium whitespace-nowrap ${year === defaultYear ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'border-transparent hover:border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text)]'}`}
+            >
+              <span class="font-mono text-sm">{year}</span>
+              {avg !== null && (
+                <div class="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <div class="size-1 rounded-full" style={`background-color: ${i <= Math.round(avg) ? color : 'var(--color-border)'};`} />
+                  ))}
+                </div>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Stats + Grid (one per year, toggled via JS) -->
+    {YEARS.map(year => {
+      const trends = getTrendsByYear(year);
+      return (
+        <div data-year-content={year} class={`year-content ${year === defaultYear ? '' : 'hidden'}`}>
+          <div class="mb-6">
+            <div class="flex items-baseline gap-3 mb-4">
+              <h2 class="text-2xl font-bold font-mono">{year}</h2>
+              <span class="text-sm text-[var(--color-text-dim)]">Top Strategic Technology Trends</span>
+            </div>
+            <YearStats trends={trends} year={year} />
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {trends.map((trend, i) => (
+              <TrendCard trend={trend} index={i} />
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll<HTMLButtonElement>('.year-btn');
+      const contents = document.querySelectorAll<HTMLElement>('.year-content');
+
+      function showYear(year: string) {
+        buttons.forEach(b => {
+          b.classList.remove('border-[var(--color-accent)]', 'bg-[var(--color-accent)]/10', 'text-[var(--color-accent)]');
+          b.classList.add('border-transparent', 'text-[var(--color-text-muted)]');
+          if (b.dataset.year === year) {
+            b.classList.remove('border-transparent', 'text-[var(--color-text-muted)]');
+            b.classList.add('border-[var(--color-accent)]', 'bg-[var(--color-accent)]/10', 'text-[var(--color-accent)]');
+          }
+        });
+        contents.forEach(c => {
+          if (c.dataset.yearContent === year) {
+            c.classList.remove('hidden');
+            c.querySelectorAll('.animate-fade-in-up').forEach((el, i) => {
+              const htmlEl = el as HTMLElement;
+              htmlEl.style.animation = 'none';
+              htmlEl.offsetHeight;
+              htmlEl.style.animation = '';
+            });
+          } else {
+            c.classList.add('hidden');
+          }
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const year = btn.dataset.year;
+          if (year) showYear(year);
+        });
+      });
+
+      const hashYear = location.hash.slice(1);
+      if (hashYear && [...buttons].some(b => b.dataset.year === hashYear)) {
+        showYear(hashYear);
+      }
+    });
+  </script>
+</Layout>

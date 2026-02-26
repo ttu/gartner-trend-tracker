@@ -1,0 +1,19 @@
+---
+import { getStatusColor } from '../lib/trends';
+
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props;
+const color = getStatusColor(status);
+const label = status.charAt(0).toUpperCase() + status.slice(1);
+---
+
+<span
+  class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium border"
+  style={`color: ${color}; border-color: ${color}33; background-color: ${color}11;`}
+>
+  <span class="size-1.5 rounded-full" style={`background-color: ${color};`}></span>
+  {label}
+</span>

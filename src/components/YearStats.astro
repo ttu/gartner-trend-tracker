@@ -1,0 +1,56 @@
+---
+import type { Trend } from '../lib/trends';
+import { getAverageScore, getScoreColor } from '../lib/trends';
+
+interface Props {
+  trends: Trend[];
+  year: number;
+}
+
+const { trends, year } = Astro.props;
+const avgScore = getAverageScore(trends);
+const avgColor = getScoreColor(avgScore !== null ? Math.round(avgScore) : null);
+const categories = [...new Set(trends.map(t => t.category))];
+const statusCounts = {
+  mainstream: trends.filter(t => t.status === 'mainstream').length,
+  emerging: trends.filter(t => t.status === 'emerging').length,
+  faded: trends.filter(t => t.status === 'faded').length,
+  transformed: trends.filter(t => t.status === 'transformed').length,
+  niche: trends.filter(t => t.status === 'niche').length,
+};
+---
+
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 animate-fade-in">
+  <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+    <div class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider mb-1">Avg Accuracy</div>
+    <div class="font-mono text-2xl font-bold" style={`color: ${avgColor};`}>
+      {avgScore !== null ? avgScore : 'N/A'}
+      {avgScore !== null && <span class="text-sm font-normal text-[var(--color-text-dim)]">/5</span>}
+    </div>
+  </div>
+
+  <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+    <div class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider mb-1">Trends</div>
+    <div class="font-mono text-2xl font-bold text-[var(--color-text)]">{trends.length}</div>
+  </div>
+
+  <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+    <div class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider mb-1">Categories</div>
+    <div class="font-mono text-2xl font-bold text-[var(--color-text)]">{categories.length}</div>
+  </div>
+
+  <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+    <div class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider mb-1">Status</div>
+    <div class="flex items-center gap-2 mt-1">
+      {statusCounts.mainstream > 0 && (
+        <span class="text-xs font-mono text-[var(--color-status-mainstream)]">{statusCounts.mainstream} mainstream</span>
+      )}
+      {statusCounts.niche > 0 && (
+        <span class="text-xs font-mono text-[var(--color-status-niche)]">{statusCounts.niche} niche</span>
+      )}
+      {statusCounts.faded > 0 && (
+        <span class="text-xs font-mono text-[var(--color-status-faded)]">{statusCounts.faded} faded</span>
+      )}
+    </div>
+  </div>
+</div>

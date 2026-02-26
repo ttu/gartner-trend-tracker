@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Agentic AI",
+    "year": 2025,
+    "slug": "agentic-ai",
+    "category": "AI/ML",
+    "description": "AI systems that can autonomously plan, execute, and adapt multi-step tasks with minimal human intervention, using tool use, reasoning, and memory.",
+    "accuracyScore": 3,
+    "accuracyNote": "Promising direction but practical deployment is limited barely a year out. Most 'agents' still fail at complex multi-step tasks. Too early for a high score — the scope and reliability aren't there yet.",
+    "status": "emerging"
+  },
+  {
+    "name": "AI Governance Platforms",
+    "year": 2025,
+    "slug": "ai-governance",
+    "category": "Governance",
+    "description": "Platforms and frameworks to manage AI model lifecycle, ensure compliance, monitor for bias, and maintain transparency across enterprise AI deployments.",
+    "accuracyScore": 3,
+    "accuracyNote": "Growing but still emerging. The prediction is barely a year old — scoring it highly is premature. Wait for more evidence before calling this accurate.",
+    "status": "emerging"
+  },
+  {
+    "name": "Disinformation Security",
+    "year": 2025,
+    "slug": "disinformation-security",
+    "category": "Security",
+    "description": "Technologies and practices to detect, prevent, and respond to AI-generated disinformation including deepfakes, synthetic media, and AI-powered influence campaigns.",
+    "accuracyScore": 3,
+    "accuracyNote": "Deepfake detection and C2PA exist but are not widely deployed. Too early to score a 2025 prediction highly when it's less than a year old.",
+    "status": "emerging"
+  },
+  {
+    "name": "Postquantum Cryptography",
+    "year": 2025,
+    "slug": "post-quantum-crypto",
+    "category": "Security",
+    "description": "Cryptographic algorithms designed to be secure against both classical and quantum computer attacks. Organizations need to begin transitioning now.",
+    "accuracyScore": 3,
+    "accuracyNote": "Important but early — NIST published post-quantum standards (2024), but actual enterprise migration is just beginning. Quantum threats remain theoretical for now.",
+    "status": "emerging"
+  },
+  {
+    "name": "Ambient Invisible Intelligence",
+    "year": 2025,
+    "slug": "ambient-intelligence",
+    "category": "IoT",
+    "description": "Ultra-low-cost smart tags and sensors creating an environment of invisible, always-on intelligence for tracking, sensing, and monitoring at massive scale.",
+    "accuracyScore": 2,
+    "accuracyNote": "Very early — while RFID and sensor costs decreased, the vision of pervasive invisible intelligence hasn't materialized. Still more concept than reality.",
+    "status": "emerging"
+  },
+  {
+    "name": "Energy-Efficient Computing",
+    "year": 2025,
+    "slug": "energy-efficient-computing",
+    "category": "Infrastructure",
+    "description": "New computing paradigms (neuromorphic, optical, energy-harvesting chips) and software optimization to dramatically reduce AI and cloud computing's energy consumption.",
+    "accuracyScore": 3,
+    "accuracyNote": "Growing urgency — AI energy consumption is a real concern driving investment, but revolutionary new computing paradigms remain in research. Software optimization is more practical.",
+    "status": "emerging"
+  },
+  {
+    "name": "Hybrid Computing",
+    "year": 2025,
+    "slug": "hybrid-computing",
+    "category": "Infrastructure",
+    "description": "Combining different computing paradigms — classical, quantum, edge, neuromorphic — into unified architectures optimized for specific workloads.",
+    "accuracyScore": 2,
+    "accuracyNote": "Mostly aspirational — cloud/edge hybrid is real, but quantum and neuromorphic integration remains experimental. The fully hybrid vision is years away.",
+    "status": "emerging"
+  },
+  {
+    "name": "Spatial Computing",
+    "year": 2025,
+    "slug": "spatial-computing",
+    "category": "UX",
+    "description": "Technologies that digitally enhance the physical world, including AR, VR, and mixed reality, creating interactive 3D experiences for work and consumer applications.",
+    "accuracyScore": 2,
+    "accuracyNote": "Apple Vision Pro launched but adoption is very limited. Meta Quest has a niche following. Spatial computing remains a small market despite significant investment.",
+    "status": "emerging"
+  },
+  {
+    "name": "Polyfunctional Robots",
+    "year": 2025,
+    "slug": "polyfunctional-robots",
+    "category": "AI/ML",
+    "description": "Robots capable of performing multiple tasks and adapting to different environments, moving beyond single-purpose industrial robots to versatile, AI-powered machines.",
+    "accuracyScore": 2,
+    "accuracyNote": "Very early — humanoid robots from Figure, Tesla (Optimus), and Boston Dynamics show promise but are far from practical deployment. Mostly demo stage.",
+    "status": "emerging"
+  },
+  {
+    "name": "Neurological Enhancement",
+    "year": 2025,
+    "slug": "neurological-enhancement",
+    "category": "Hardware",
+    "description": "Technologies that read and decode brain activity to enhance human cognitive abilities, including brain-computer interfaces and neurostimulation devices.",
+    "accuracyScore": 1,
+    "accuracyNote": "Extremely premature — Neuralink's early implants are medical-focused, not cognitive enhancement. Consumer brain-computer interfaces don't exist. Decades away from mainstream.",
+    "status": "emerging"
+  }
+]

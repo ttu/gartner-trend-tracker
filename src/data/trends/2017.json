@@ -1,0 +1,102 @@
+[
+  {
+    "name": "AI and Advanced Machine Learning",
+    "year": 2017,
+    "slug": "ai-advanced-ml",
+    "category": "AI/ML",
+    "description": "AI and machine learning consisting of deep learning, neural networks, and natural language processing would be applied to understand, learn, predict, adapt, and potentially operate autonomously.",
+    "accuracyScore": 3,
+    "accuracyNote": "Right domain, completely wrong mechanism. The actual breakthrough — transformer-based LLMs at massive scale — was a different paradigm than the incremental deep learning progress described. Getting the HOW entirely wrong is not a minor deviation.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Intelligent Apps",
+    "year": 2017,
+    "slug": "intelligent-apps",
+    "category": "AI/ML",
+    "description": "Every app would incorporate AI in some form — from virtual personal assistants to intelligent advisors in enterprise applications that transform work and decision-making.",
+    "accuracyScore": 3,
+    "accuracyNote": "Apps did become 'intelligent,' but via LLM APIs bolted on starting in 2023, not the traditional ML integration described (virtual personal assistants, intelligent advisors). The mechanism (foundation model APIs) was entirely unforeseen — same label, different technology.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Intelligent Things",
+    "year": 2017,
+    "slug": "intelligent-things",
+    "category": "IoT",
+    "description": "Physical things like robots, drones, and autonomous vehicles would use AI to deliver advanced behaviors and interact naturally with people and surroundings.",
+    "accuracyScore": 2,
+    "accuracyNote": "Predicted robots, drones, and autonomous vehicles using AI to interact naturally with people. Smart speakers were the only real success, and they plateaued. Autonomous vehicles and consumer robots remain limited. The 'intelligent things' that actually took off were software-based (LLM agents), not physical things.",
+    "status": "transformed"
+  },
+  {
+    "name": "Virtual and Augmented Reality",
+    "year": 2017,
+    "slug": "vr-ar",
+    "category": "UX",
+    "description": "VR and AR would transform how people interact with each other and with software systems, creating immersive environments for work and entertainment.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overhyped — while VR found niches in gaming and training, mainstream adoption never materialized as predicted. Apple Vision Pro (2024) renewed interest but adoption remains limited.",
+    "status": "niche"
+  },
+  {
+    "name": "Digital Twins",
+    "year": 2017,
+    "slug": "digital-twins",
+    "category": "IoT",
+    "description": "Digital representations of real-world things would be used for simulation, analysis, and control. Within 3-5 years, billions of things would have digital twins.",
+    "accuracyScore": 3,
+    "accuracyNote": "Mixed — digital twins became valuable in manufacturing, aerospace, and urban planning, but 'billions of digital twins' was overly ambitious. Strong niche technology, not universal.",
+    "status": "niche"
+  },
+  {
+    "name": "Mesh App and Service Architecture",
+    "year": 2017,
+    "slug": "mesh-arch-2017",
+    "category": "Architecture",
+    "description": "Microservices, APIs, and event-driven architecture would form the backbone of modern application development, enabling rapid innovation and scalability.",
+    "accuracyScore": 3,
+    "accuracyNote": "Microservices became popular, but this was already well underway by 2017 (SOA had existed for years). More observing an existing trend than predicting one. The backlash toward modular monoliths also suggests universal adoption was overstated.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Digital Technology Platforms",
+    "year": 2017,
+    "slug": "digital-platforms",
+    "category": "Platform",
+    "description": "Five key digital technology platforms — information systems, customer experience, analytics/intelligence, IoT, and business ecosystems — would be the building blocks for digital business.",
+    "accuracyScore": 3,
+    "accuracyNote": "'Five key digital technology platforms as building blocks' is a taxonomy of existing tech (information systems, CX, analytics, IoT, ecosystems), not a falsifiable prediction. Classification disguised as prediction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Conversational Systems",
+    "year": 2017,
+    "slug": "conversational-systems",
+    "category": "AI/ML",
+    "description": "Conversational interfaces using chatbots and digital assistants would shift from a model where people adapt to computers toward computers adapting to people.",
+    "accuracyScore": 3,
+    "accuracyNote": "Gartner described chatbots and digital assistants improving incrementally via NLP. What actually happened was a paradigm shift — LLMs created conversational AI that bore no resemblance to the rule-based and intent-matching chatbots of 2017. ChatGPT didn't fulfill this prediction; it replaced the entire approach Gartner had in mind.",
+    "status": "transformed"
+  },
+  {
+    "name": "Blockchain and Distributed Ledgers",
+    "year": 2017,
+    "slug": "blockchain",
+    "category": "Blockchain",
+    "description": "Blockchain would evolve from a cryptocurrency infrastructure into a platform for digital transformation, enabling trust, transparency, and new business models.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overhyped — while cryptocurrency grew significantly, enterprise blockchain adoption was minimal. Most blockchain projects failed to deliver promised transformation. NFTs rose and crashed.",
+    "status": "faded"
+  },
+  {
+    "name": "Adaptive Security Architecture",
+    "year": 2017,
+    "slug": "adaptive-security-2017",
+    "category": "Security",
+    "description": "Continuous monitoring, advanced analytics, and adaptive responses would become essential as threats evolve faster than traditional security can respond.",
+    "accuracyScore": 3,
+    "accuracyNote": "'Continuous monitoring and adaptive responses' was generic security advice every CISO was already giving. Zero trust and SOAR are real, but this prediction lacked specificity. Directionally correct, not bold.",
+    "status": "mainstream"
+  }
+]

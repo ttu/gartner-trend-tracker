@@ -1,0 +1,102 @@
+[
+  {
+    "name": "AI Trust, Risk, and Security Management",
+    "year": 2024,
+    "slug": "ai-trism-2024",
+    "category": "Governance",
+    "description": "Ensuring AI models are trustworthy, fair, reliable, robust, and private — with governance frameworks to manage AI risk across the organization.",
+    "accuracyScore": 3,
+    "accuracyNote": "Repeat from 2023. EU AI Act was already passed by this point. Observing ongoing regulatory momentum is continuation, not prediction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Continuous Threat Exposure Management",
+    "year": 2024,
+    "slug": "ctem",
+    "category": "Security",
+    "description": "A pragmatic, systemic approach to continuously prioritizing and optimizing security threat remediation based on actual exposure and business risk.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — attack surface management and continuous security assessment tools gained traction. Organizations shifted from periodic pentests to continuous exposure monitoring.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Sustainable Technology",
+    "year": 2024,
+    "slug": "sustainable-tech-2024",
+    "category": "Governance",
+    "description": "Technology solutions that improve energy efficiency, enable circularity, and help organizations meet ESG goals while managing AI's growing energy footprint.",
+    "accuracyScore": 3,
+    "accuracyNote": "Increasingly relevant — AI's massive energy consumption made sustainable computing critical. Green data centers and energy-efficient AI became major investment areas.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Platform Engineering",
+    "year": 2024,
+    "slug": "platform-engineering-2024",
+    "category": "Platform",
+    "description": "Self-service internal developer platforms with curated toolchains, golden paths, and infrastructure automation to improve developer productivity.",
+    "accuracyScore": 4,
+    "accuracyNote": "Platform engineering is real but this is essentially the same prediction from 2023 repeated. Backstage launched in 2020 — the trend was already well-known. Predicting continuation of an existing trend doesn't warrant a 5.",
+    "status": "mainstream"
+  },
+  {
+    "name": "AI-Augmented Development",
+    "year": 2024,
+    "slug": "ai-augmented-dev",
+    "category": "AI/ML",
+    "description": "AI coding assistants and generative AI tools would significantly accelerate software development, from code generation to testing to documentation.",
+    "accuracyScore": 5,
+    "accuracyNote": "Massive hit — GitHub Copilot, Cursor, Claude Code, and other AI development tools became essential. AI-augmented development is now the default mode for most developers.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Industry Cloud Platforms",
+    "year": 2024,
+    "slug": "industry-cloud-2024",
+    "category": "Cloud",
+    "description": "Cloud platforms combining IaaS, PaaS, and SaaS with industry-specific data models, business logic, and compliance features for vertical markets.",
+    "accuracyScore": 4,
+    "accuracyNote": "Growing — healthcare, financial services, and manufacturing cloud platforms from AWS, Azure, and Google expanded their industry-specific offerings.",
+    "status": "niche"
+  },
+  {
+    "name": "Intelligent Applications",
+    "year": 2024,
+    "slug": "intelligent-apps-2024",
+    "category": "AI/ML",
+    "description": "Applications with embedded AI that learn, adapt, and autonomously take action to augment or automate work across every enterprise function.",
+    "accuracyScore": 3,
+    "accuracyNote": "Every major SaaS product added AI features, true. But much of it is superficial 'add a Copilot button' integration. The prediction says apps that 'learn, adapt, and autonomously take action' — most AI features are glorified autocomplete or chatbot wrappers, not autonomous agents.",
+    "status": "niche"
+  },
+  {
+    "name": "Democratized Generative AI",
+    "year": 2024,
+    "slug": "democratized-genai",
+    "category": "AI/ML",
+    "description": "Generative AI would become accessible to all knowledge workers through cloud APIs, pre-trained models, and natural language interfaces.",
+    "accuracyScore": 5,
+    "accuracyNote": "Completely realized — ChatGPT, Claude, Gemini, and open-source models made generative AI universally accessible. Anyone can now use AI without technical expertise.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Augmented Connected Workforce",
+    "year": 2024,
+    "slug": "augmented-workforce",
+    "category": "AI/ML",
+    "description": "Using AI, analytics, and smart applications to provide context and guidance to workers, improving their ability to learn, make decisions, and collaborate.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — AI assistants for customer service, coding, writing, and analysis became standard workplace tools. The augmented worker is real.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Machine Customers",
+    "year": 2024,
+    "slug": "machine-customers",
+    "category": "AI/ML",
+    "description": "AI agents acting as autonomous economic actors — making purchases, negotiating contracts, and conducting transactions on behalf of humans or organizations.",
+    "accuracyScore": 2,
+    "accuracyNote": "Too early — while AI agents can browse and research, autonomous machine purchasing at scale hasn't materialized. Interesting concept but premature for 2024.",
+    "status": "emerging"
+  }
+]

@@ -1,0 +1,363 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { YEARS, getTrendsByYear, getAllTrends, getAverageScore, getScoreColor, getCategoryColor, getStatusColor } from '../lib/trends';
+import { url } from '../lib/url';
+
+const allTrends = getAllTrends();
+const categories = [...new Set(allTrends.map(t => t.category))].sort();
+
+// Filter URLs for links (params applied client-side for static build)
+// Supports multiselect: pass arrays to build ?status=a&status=b&category=c
+function filterUrl(overrides: { status?: string | string[]; category?: string | string[] }): string {
+  const p = new URLSearchParams();
+  const statuses = overrides.status != null ? (Array.isArray(overrides.status) ? overrides.status : [overrides.status]).filter(Boolean) : [];
+  const categories = overrides.category != null ? (Array.isArray(overrides.category) ? overrides.category : [overrides.category]).filter(Boolean) : [];
+  statuses.forEach(s => p.append('status', s));
+  categories.forEach(c => p.append('category', encodeURIComponent(c)));
+  const q = p.toString();
+  return url(q ? `/overview?${q}` : '/overview');
+}
+
+// Year averages for chart
+const yearAverages = YEARS.map(year => ({
+  year,
+  avg: getAverageScore(getTrendsByYear(year)),
+  count: getTrendsByYear(year).length,
+}));
+
+// Category stats
+const categoryStats = categories.map(cat => {
+  const trends = allTrends.filter(t => t.category === cat);
+  const scored = trends.filter(t => t.accuracyScore !== null);
+  const avg = scored.length > 0 ? Math.round((scored.reduce((s, t) => s + t.accuracyScore!, 0) / scored.length) * 10) / 10 : null;
+  return { category: cat, count: trends.length, avg, color: getCategoryColor(cat) };
+}).sort((a, b) => b.count - a.count);
+
+// Status distribution
+const statusDist = {
+  mainstream: allTrends.filter(t => t.status === 'mainstream').length,
+  emerging: allTrends.filter(t => t.status === 'emerging').length,
+  faded: allTrends.filter(t => t.status === 'faded').length,
+  transformed: allTrends.filter(t => t.status === 'transformed').length,
+  niche: allTrends.filter(t => t.status === 'niche').length,
+};
+const totalTrends = allTrends.length;
+---
+
+<Layout title="Overview — Gartner Trend Tracker">
+  <style>
+    .overview-filter-active {
+      border-color: var(--color-accent);
+      background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+      box-shadow: 0 0 0 1px var(--color-accent);
+    }
+  </style>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-10 animate-fade-in-up">
+      <h1 class="text-3xl font-extrabold tracking-tight mb-2">Overview</h1>
+      <p class="text-[var(--color-text-muted)]">
+        Bird's eye view of {totalTrends} predictions across {YEARS.length} years
+        <span id="filter-message" class="hidden">
+          · Showing <span id="filter-count">0</span> filtered
+          <a id="filter-clear" href={url('/overview')} class="ml-2 text-[var(--color-accent)] hover:underline">Clear filters</a>
+        </span>
+      </p>
+    </div>
+
+    <!-- Accuracy by Year Chart -->
+    <div class="mb-10 animate-fade-in-up delay-1">
+      <h2 class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium mb-4">Average Accuracy by Year</h2>
+      <div class="p-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+        <div class="flex items-end gap-2 h-48">
+          {yearAverages.map(({ year, avg, count }) => {
+            const heightPct = avg !== null ? (avg / 5) * 100 : 0;
+            const color = getScoreColor(avg !== null ? Math.round(avg) : null);
+            return (
+              <a href={url(`/#${year}`)} class="flex-1 flex flex-col items-center gap-2 group min-w-0 h-full">
+                <span class="text-xs font-mono font-bold transition-opacity group-hover:opacity-100 shrink-0" style={`color: ${color}; opacity: 0.9;`}>
+                  {avg ?? 'N/A'}
+                </span>
+                <div class="w-full flex flex-col justify-end flex-1 min-h-0 basis-0 items-center" style="height: 8rem;">
+                  <div
+                    class="w-full max-w-10 min-w-2 rounded-t-md transition-all duration-300 group-hover:opacity-90 shrink-0"
+                    style={`height: ${heightPct}%; min-height: ${avg != null ? '8px' : '0'}; background: linear-gradient(to top, color-mix(in srgb, ${color} 55%, transparent), ${color});`}
+                  />
+                </div>
+                <span class="text-[10px] font-mono text-[var(--color-text-dim)] group-hover:text-[var(--color-text)] transition-colors -rotate-45 origin-center shrink-0 inline-block translate-y-1">
+                  {year}
+                </span>
+              </a>
+            );
+          })}
+        </div>
+        <div class="flex justify-between mt-6 text-[10px] text-[var(--color-text-dim)] uppercase tracking-wider border-t border-[var(--color-border)] pt-3">
+          <span>Older predictions (more data)</span>
+          <span>Recent predictions (less data)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10 animate-fade-in-up delay-2">
+      {Object.entries(statusDist).map(([status, count]) => {
+        const pct = Math.round((count / totalTrends) * 100);
+        const color = getStatusColor(status);
+        const href = filterUrl({ status });
+        return (
+          <a
+            href={href}
+            data-status={status}
+            class="p-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-colors block hover:opacity-90 hover:border-[var(--color-border)] overview-status-card"
+          >
+            <div class="flex items-center gap-2 mb-2">
+              <span class="size-2 rounded-full" style={`background-color: ${color};`}></span>
+              <span class="text-xs uppercase tracking-wider font-medium" style={`color: ${color};`}>
+                {status}
+              </span>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span class="font-mono text-2xl font-bold text-[var(--color-text)] status-card-count">{count}</span>
+              <span class="text-xs text-[var(--color-text-dim)] status-card-pct">{pct}%</span>
+            </div>
+            <div class="mt-2 h-1.5 rounded-full bg-[var(--color-border)] overflow-hidden">
+              <div class="h-full rounded-full transition-all status-card-bar" style={`width: ${pct}%; background-color: ${color};`}></div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Category breakdown -->
+    <div class="mb-10 animate-fade-in-up delay-3">
+      <h2 class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium mb-4">Categories</h2>
+      <div class="grid gap-2">
+        {categoryStats.map(({ category, count, avg, color }) => {
+          const href = filterUrl({ category });
+          return (
+            <a
+              href={href}
+              data-category={category}
+              class="flex items-center gap-4 p-3 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-colors overview-category-row hover:border-[var(--color-border)] hover:bg-[var(--color-bg-card-hover)]"
+            >
+              <div class="w-3 h-8 rounded-sm flex-shrink-0" style={`background-color: ${color};`}></div>
+              <span class="text-sm font-medium flex-1">{category}</span>
+              <span class="text-xs font-mono text-[var(--color-text-dim)] category-trend-count">{count} trends</span>
+              <div class="flex items-center gap-1 category-trend-avg-wrap">
+                <span class="category-trend-avg-value text-xs font-mono font-bold" style={avg !== null ? `color: ${getScoreColor(Math.round(avg))};` : ''}>{avg ?? '—'}</span>
+                <span class="text-[10px] text-[var(--color-text-dim)]">avg</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Full heatmap -->
+    <div class="animate-fade-in-up delay-4">
+      <h2 class="text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium mb-4">All Predictions Heatmap</h2>
+      <div class="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] overflow-x-auto">
+        <div id="filter-empty" class="hidden p-10 text-center text-[var(--color-text-muted)] text-sm">
+          No predictions match the current filters.
+          <a href={url('/overview')} class="ml-2 text-[var(--color-accent)] hover:underline">Clear filters</a>
+        </div>
+        <table class="w-full text-sm" id="heatmap-table">
+          <thead>
+            <tr class="border-b border-[var(--color-border)]">
+              <th class="text-left text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium p-3 sticky left-0 bg-[var(--color-bg-card)] z-10 min-w-[200px]">Trend</th>
+              <th class="text-center text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium p-3 w-16">Year</th>
+              <th class="text-left text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium p-3 w-24">Category</th>
+              <th class="text-center text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium p-3 w-20">Score</th>
+              <th class="text-left text-xs text-[var(--color-text-dim)] uppercase tracking-wider font-medium p-3 w-28">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allTrends.sort((a, b) => {
+              if (a.year !== b.year) return b.year - a.year;
+              return (b.accuracyScore ?? 0) - (a.accuracyScore ?? 0);
+            }).map(trend => {
+              const scoreCol = getScoreColor(trend.accuracyScore);
+              const statusCol = getStatusColor(trend.status);
+              return (
+                <tr
+                  class="border-b border-[var(--color-border)]/50 hover:bg-[var(--color-bg-card-hover)] transition-colors heatmap-row"
+                  data-status={trend.status}
+                  data-category={trend.category}
+                >
+                  <td class="p-3 sticky left-0 bg-[var(--color-bg-card)] group-hover:bg-[var(--color-bg-card-hover)]">
+                    <a href={url(`/trend/${trend.year}/${trend.slug}`)} class="hover:text-[var(--color-accent)] transition-colors font-medium text-sm">
+                      {trend.name}
+                    </a>
+                  </td>
+                  <td class="p-3 text-center font-mono text-xs text-[var(--color-text-dim)]">{trend.year}</td>
+                  <td class="p-3">
+                    <span class="text-xs font-medium" style={`color: ${getCategoryColor(trend.category)};`}>{trend.category}</span>
+                  </td>
+                  <td class="p-3 text-center">
+                    <span class="font-mono font-bold text-sm" style={`color: ${scoreCol};`}>
+                      {trend.accuracyScore ?? '—'}
+                    </span>
+                  </td>
+                  <td class="p-3">
+                    <span class="flex items-center gap-1.5 text-xs" style={`color: ${statusCol};`}>
+                      <span class="size-1.5 rounded-full" style={`background-color: ${statusCol};`}></span>
+                      {trend.status}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script define:vars={{ trendsData: allTrends.map(t => ({ category: t.category, status: t.status, accuracyScore: t.accuracyScore })), baseUrl: url('/overview') }}>
+      function scoreColor(score) {
+        if (score === null || score === undefined) return 'var(--color-text-dim)';
+        if (score <= 1) return 'var(--color-score-1)';
+        if (score <= 2) return 'var(--color-score-2)';
+        if (score <= 3) return 'var(--color-score-3)';
+        if (score <= 4) return 'var(--color-score-4)';
+        return 'var(--color-score-5)';
+      }
+
+      function buildFilterQuery(statuses, categories) {
+        const p = new URLSearchParams();
+        statuses.forEach(s => p.append('status', s));
+        categories.forEach(c => p.append('category', encodeURIComponent(c)));
+        return p.toString();
+      }
+
+      function applyOverviewFilters() {
+        const params = new URLSearchParams(window.location.search);
+        const statuses = params.getAll('status').filter(Boolean);
+        const categories = params.getAll('category').map(c => decodeURIComponent(c)).filter(Boolean);
+        const hasFilter = statuses.length > 0 || categories.length > 0;
+
+        const filtered = (trendsData || []).filter((t) => {
+          if (statuses.length > 0 && !statuses.includes(t.status)) return false;
+          if (categories.length > 0 && !categories.includes(t.category)) return false;
+          return true;
+        });
+
+        document.querySelectorAll('.overview-category-row').forEach((row) => {
+          const cat = row.getAttribute('data-category');
+          const forCategory = filtered.filter((t) => t.category === cat);
+          const count = forCategory.length;
+          const withScore = forCategory.filter((t) => t.accuracyScore != null);
+          const avg = withScore.length
+            ? Math.round((withScore.reduce((s, t) => s + t.accuracyScore, 0) / withScore.length) * 10) / 10
+            : null;
+          const countEl = row.querySelector('.category-trend-count');
+          const avgEl = row.querySelector('.category-trend-avg-value');
+          if (countEl) countEl.textContent = count + ' trends';
+          if (avgEl) {
+            avgEl.textContent = avg != null ? avg : '—';
+            avgEl.style.color = avg != null ? scoreColor(Math.round(avg)) : 'var(--color-text-dim)';
+          }
+        });
+
+        const totalAll = (trendsData || []).length;
+        document.querySelectorAll('.overview-status-card').forEach((el) => {
+          const cardStatus = el.getAttribute('data-status');
+          const count = (trendsData || []).filter((t) => t.status === cardStatus).length;
+          const pct = totalAll ? Math.round((count / totalAll) * 100) : 0;
+          const countEl = el.querySelector('.status-card-count');
+          const pctEl = el.querySelector('.status-card-pct');
+          const barEl = el.querySelector('.status-card-bar');
+          if (countEl) countEl.textContent = String(count);
+          if (pctEl) pctEl.textContent = pct + '%';
+          if (barEl) barEl.style.width = pct + '%';
+        });
+
+        const filterMessage = document.getElementById('filter-message');
+        const filterCount = document.getElementById('filter-count');
+        const filterEmpty = document.getElementById('filter-empty');
+        const heatmapTable = document.getElementById('heatmap-table');
+        const rows = document.querySelectorAll('.heatmap-row');
+
+        let visibleCount = 0;
+        rows.forEach((row) => {
+          const matchStatus = statuses.length === 0 || statuses.includes(row.getAttribute('data-status'));
+          const matchCategory = categories.length === 0 || categories.includes(row.getAttribute('data-category'));
+          const show = matchStatus && matchCategory;
+          row.style.display = show ? '' : 'none';
+          if (show) visibleCount++;
+        });
+
+        if (filterMessage && filterCount) {
+          if (hasFilter) {
+            filterCount.textContent = String(visibleCount);
+            filterMessage.classList.remove('hidden');
+          } else {
+            filterMessage.classList.add('hidden');
+          }
+        }
+
+        if (filterEmpty && heatmapTable) {
+          if (hasFilter && visibleCount === 0) {
+            filterEmpty.classList.remove('hidden');
+            heatmapTable.style.display = 'none';
+          } else {
+            filterEmpty.classList.add('hidden');
+            heatmapTable.style.display = '';
+          }
+        }
+
+        // Set toggle URLs and active state for status cards (multiselect)
+        document.querySelectorAll('.overview-status-card').forEach((el) => {
+          const cardStatus = el.getAttribute('data-status');
+          const isIncluded = statuses.includes(cardStatus);
+          const newStatuses = isIncluded ? statuses.filter(s => s !== cardStatus) : [...statuses, cardStatus];
+          const q = buildFilterQuery(newStatuses, categories);
+          el.setAttribute('href', q ? baseUrl + '?' + q : baseUrl);
+          el.classList.toggle('overview-filter-active', isIncluded);
+          el.setAttribute('aria-pressed', String(isIncluded));
+        });
+
+        // Set toggle URLs and active state for category rows (multiselect)
+        document.querySelectorAll('.overview-category-row').forEach((el) => {
+          const rowCategory = el.getAttribute('data-category');
+          const isIncluded = categories.includes(rowCategory);
+          const newCategories = isIncluded ? categories.filter(c => c !== rowCategory) : [...categories, rowCategory];
+          const q = buildFilterQuery(statuses, newCategories);
+          el.setAttribute('href', q ? baseUrl + '?' + q : baseUrl);
+          el.classList.toggle('overview-filter-active', isIncluded);
+          el.setAttribute('aria-pressed', String(isIncluded));
+        });
+      }
+
+      // Multiselect: use pushState so toggling doesn't reload the page.
+      // Build toggle URL from current params + clicked card so we never clear other statuses.
+      document.querySelector('.mx-auto.max-w-7xl')?.addEventListener('click', (e) => {
+        const a = e.target?.closest?.('a.overview-status-card, a.overview-category-row');
+        if (!a) return;
+        const href = a.getAttribute('href');
+        if (!href || !href.startsWith(baseUrl)) return;
+        e.preventDefault();
+        const params = new URLSearchParams(window.location.search);
+        const statuses = params.getAll('status').filter(Boolean);
+        const categories = params.getAll('category').map(c => decodeURIComponent(c)).filter(Boolean);
+        if (a.classList.contains('overview-status-card')) {
+          const cardStatus = a.getAttribute('data-status');
+          const isIncluded = statuses.includes(cardStatus);
+          const newStatuses = isIncluded ? statuses.filter(s => s !== cardStatus) : [...statuses, cardStatus];
+          const q = buildFilterQuery(newStatuses, categories);
+          const newHref = q ? baseUrl + '?' + q : baseUrl;
+          window.history.pushState({}, '', newHref);
+        } else {
+          const rowCategory = a.getAttribute('data-category');
+          const isIncluded = categories.includes(rowCategory);
+          const newCategories = isIncluded ? categories.filter(c => c !== rowCategory) : [...categories, rowCategory];
+          const q = buildFilterQuery(statuses, newCategories);
+          const newHref = q ? baseUrl + '?' + q : baseUrl;
+          window.history.pushState({}, '', newHref);
+        }
+        applyOverviewFilters();
+      });
+
+      applyOverviewFilters();
+      window.addEventListener('popstate', applyOverviewFilters);
+    </script>
+  </div>
+</Layout>

@@ -1,0 +1,17 @@
+---
+import { getCategoryColor } from '../lib/trends';
+
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+const color = getCategoryColor(category);
+---
+
+<span
+  class="inline-flex items-center rounded px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider"
+  style={`color: ${color}; background-color: ${color}15;`}
+>
+  {category}
+</span>

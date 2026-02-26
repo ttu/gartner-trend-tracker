@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Digital Immune System",
+    "year": 2023,
+    "slug": "digital-immune-system",
+    "category": "Architecture",
+    "description": "Combining observability, AI-augmented testing, chaos engineering, auto-remediation, and site reliability engineering to increase system resilience.",
+    "accuracyScore": 3,
+    "accuracyNote": "Combines observability, chaos engineering, and SRE — all practices that existed well before 2023. Observability (Datadog) was established by 2020, chaos engineering (Netflix) dates to 2012. Packaging existing practices under a new name isn't predicting something new.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Applied Observability",
+    "year": 2023,
+    "slug": "applied-observability",
+    "category": "Data",
+    "description": "Organizations would apply observability data (logs, metrics, traces, events) across business functions to enable faster, more accurate decision-making.",
+    "accuracyScore": 3,
+    "accuracyNote": "OpenTelemetry and observability platforms were already established by 2023. 'Applying observability data to business functions' sounds good but most organizations still struggle to connect ops metrics to business outcomes. More aspiration than reality.",
+    "status": "mainstream"
+  },
+  {
+    "name": "AI Trust, Risk, and Security Management",
+    "year": 2023,
+    "slug": "ai-trism",
+    "category": "Governance",
+    "description": "AI TRiSM — a framework for AI model governance, trustworthiness, fairness, reliability, robustness, efficacy, and data protection.",
+    "accuracyScore": 3,
+    "accuracyNote": "EU AI Act and responsible AI are real, but by 2023 ChatGPT had just launched and AI governance concerns were already front-page news. Predicting that AI governance would matter at that point was not a bold call.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Industry Cloud Platforms",
+    "year": 2023,
+    "slug": "industry-cloud",
+    "category": "Cloud",
+    "description": "Cloud platforms tailored for specific industries (healthcare, financial services, manufacturing) with pre-built industry data models, APIs, and compliance features.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — AWS, Azure, and Google all launched industry-specific cloud solutions. Healthcare, financial services, and manufacturing clouds gained traction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Platform Engineering",
+    "year": 2023,
+    "slug": "platform-engineering",
+    "category": "Platform",
+    "description": "Building and operating self-service internal developer platforms (IDPs) that provide toolchains, workflows, and infrastructure abstraction for development teams.",
+    "accuracyScore": 5,
+    "accuracyNote": "Spot on — platform engineering became one of the hottest infrastructure trends. Backstage, Port, and internal developer platforms are now standard at mid-to-large companies.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Wireless Value Realization",
+    "year": 2023,
+    "slug": "wireless-value",
+    "category": "Infrastructure",
+    "description": "Organizations would go beyond just connecting devices to using wireless technologies (5G, Wi-Fi 6/7, LPWAN) as direct enablers of new business capabilities.",
+    "accuracyScore": 3,
+    "accuracyNote": "Mixed — Wi-Fi 6/7 adoption is growing, 5G improved connectivity, but the 'value realization' beyond basic connectivity remains limited for most organizations.",
+    "status": "emerging"
+  },
+  {
+    "name": "Superapps",
+    "year": 2023,
+    "slug": "superapps",
+    "category": "Mobile",
+    "description": "Applications that combine app, platform, and ecosystem functionality into one program, providing a set of mini-apps that users can activate for personalized experiences.",
+    "accuracyScore": 2,
+    "accuracyNote": "Overhyped for Western markets — WeChat succeeded in China, but Western superapp attempts (X/Twitter, Meta) largely failed. Users prefer specialized apps.",
+    "status": "faded"
+  },
+  {
+    "name": "Adaptive AI",
+    "year": 2023,
+    "slug": "adaptive-ai",
+    "category": "AI/ML",
+    "description": "AI systems that can rapidly adapt to changing real-world conditions by updating their models and learning from new data without full retraining.",
+    "accuracyScore": 3,
+    "accuracyNote": "Predicted AI systems that 'rapidly adapt by updating models without full retraining.' RAG isn't model adaptation — it's retrieval augmenting a static model. Fine-tuning requires deliberate effort, not automatic adaptation. What exists is less autonomous than described.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Metaverse",
+    "year": 2023,
+    "slug": "metaverse",
+    "category": "UX",
+    "description": "A persistent, immersive 3D virtual space combining physical and digital experiences for commerce, entertainment, education, and work.",
+    "accuracyScore": 1,
+    "accuracyNote": "Gartner's worst call in recent years — the metaverse hype collapsed spectacularly. Meta's pivot lost billions, enterprise metaverse projects were abandoned, and the concept faded rapidly.",
+    "status": "faded"
+  },
+  {
+    "name": "Sustainable Technology",
+    "year": 2023,
+    "slug": "sustainable-tech",
+    "category": "Governance",
+    "description": "Using technology to achieve ESG outcomes, including energy-efficient computing, carbon tracking, and sustainability-focused IT frameworks.",
+    "accuracyScore": 3,
+    "accuracyNote": "AI energy concerns are real, but most organizations have done little concretely beyond talking about it. Green data centers are driven more by cost than the ESG frameworks Gartner described. Large gap between stated importance and actual action.",
+    "status": "emerging"
+  }
+]

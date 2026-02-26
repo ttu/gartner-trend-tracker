@@ -1,0 +1,102 @@
+[
+  {
+    "name": "The Device Mesh",
+    "year": 2016,
+    "slug": "device-mesh",
+    "category": "Mobile",
+    "description": "An expanding set of endpoints people use to access applications and information, or interact with people, social communities, governments, and businesses, forming a 'mesh' of connected devices.",
+    "accuracyScore": 3,
+    "accuracyNote": "Device ecosystems grew but as walled gardens (Apple, Google, Samsung), not the open 'mesh' of interconnected devices described. The mechanism (vendor lock-in ecosystems vs. mesh interoperability) was wrong.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Ambient User Experience",
+    "year": 2016,
+    "slug": "ambient-ux",
+    "category": "UX",
+    "description": "User experiences would flow across the device mesh, creating a continuous and ambient experience that blends physical, virtual, and electronic environments.",
+    "accuracyScore": 3,
+    "accuracyNote": "Partially realized — Apple's Continuity, Handoff, and Universal Clipboard showed this vision, but truly seamless ambient UX remains a work in progress.",
+    "status": "emerging"
+  },
+  {
+    "name": "3D Printing Materials",
+    "year": 2016,
+    "slug": "3d-printing-materials",
+    "category": "Hardware",
+    "description": "Advances in 3D printing materials (metals, biocompatible, carbon fiber, glass, electronics) would expand use cases dramatically.",
+    "accuracyScore": 3,
+    "accuracyNote": "Mixed — material diversity did expand significantly for industrial use (metal printing for aerospace, bioprinting), but the broader transformation was slower than predicted.",
+    "status": "niche"
+  },
+  {
+    "name": "Information of Everything",
+    "year": 2016,
+    "slug": "information-of-everything",
+    "category": "Data",
+    "description": "Everything in the digital mesh produces, uses, and transmits information. Organizations must find ways to link data from all these sources.",
+    "accuracyScore": 4,
+    "accuracyNote": "Accurate — the data explosion happened. Data lakes, data mesh architectures, and data integration platforms became essential enterprise infrastructure.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Advanced Machine Learning",
+    "year": 2016,
+    "slug": "advanced-ml",
+    "category": "AI/ML",
+    "description": "Deep neural networks would move beyond classical computing to systems that can learn autonomously and act on what they learn. Prediction: this would create smart machines.",
+    "accuracyScore": 3,
+    "accuracyNote": "Gartner correctly identified that deep neural networks would be transformative. However, the specific mechanism they described (systems that 'learn autonomously and act') didn't match reality — the transformer architecture and scaling laws that actually drove the revolution weren't anticipated. Credit for identifying the right area, but the path was different.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Autonomous Agents and Things",
+    "year": 2016,
+    "slug": "autonomous-agents",
+    "category": "AI/ML",
+    "description": "Smart machines including robots, autonomous vehicles, virtual personal assistants, and smart advisors would operate with increasing autonomy.",
+    "accuracyScore": 2,
+    "accuracyNote": "The prediction described robots, autonomous vehicles, and smart advisors operating with increasing autonomy. Autonomous vehicles and physical robots largely failed to deliver. The 'AI agents' that emerged in 2024-2025 are LLM-based software agents — a fundamentally different concept than the physical autonomous things Gartner envisioned. The name matches; the reality doesn't.",
+    "status": "transformed"
+  },
+  {
+    "name": "Adaptive Security Architecture",
+    "year": 2016,
+    "slug": "adaptive-security",
+    "category": "Security",
+    "description": "Traditional security approaches would be inadequate. Organizations would need adaptive, multilayered security that responds in real time to threats.",
+    "accuracyScore": 3,
+    "accuracyNote": "Zero trust and adaptive security are real, but 'traditional security would be inadequate' is something every security vendor had been saying for decades. Directionally correct but not a bold or specific prediction.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Advanced System Architecture",
+    "year": 2016,
+    "slug": "advanced-system-arch",
+    "category": "Infrastructure",
+    "description": "Neuromorphic computing, GPU-accelerated computing, and FPGAs would create new computing architectures optimized for specific workloads like AI.",
+    "accuracyScore": 3,
+    "accuracyNote": "Highlighted neuromorphic computing, GPUs, and FPGAs. Neuromorphic went nowhere, FPGAs for AI didn't take off — GPUs won decisively. Only the GPU part was right, and that was already underway by 2016.",
+    "status": "mainstream"
+  },
+  {
+    "name": "Mesh App and Service Architecture",
+    "year": 2016,
+    "slug": "mesh-architecture",
+    "category": "Architecture",
+    "description": "Apps would be composed of loosely coupled microservices connected through APIs, enabling flexible, scalable architectures.",
+    "accuracyScore": 3,
+    "accuracyNote": "Microservices and API-first design became popular, but this was already happening (SOA existed for years). More observation than prediction. Many organizations have since moved back toward modular monoliths.",
+    "status": "mainstream"
+  },
+  {
+    "name": "IoT Architecture and Platforms",
+    "year": 2016,
+    "slug": "iot-platforms",
+    "category": "IoT",
+    "description": "IoT platforms would emerge as the foundation for managing billions of connected devices, with standardized architectures and protocols.",
+    "accuracyScore": 3,
+    "accuracyNote": "Mixed — AWS IoT, Azure IoT Hub, and Google Cloud IoT emerged, but the 'billions of devices' timeline was optimistic and standardization remains incomplete.",
+    "status": "niche"
+  }
+]
